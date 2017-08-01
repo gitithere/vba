@@ -1,0 +1,41 @@
+Public Sub Test()
+Dim readline As String
+Dim ColA As String ' readline
+Dim ColB As String ' object network
+Dim ColC As String ' host subnet
+Dim ColD As String ' description
+Dim MainRow As Integer
+Dim WriteRow As Integer
+Dim Objecttype As String
+
+ColA = "A"
+ColB = "B"
+ColC = "C"
+ColD = "D"
+MainRow = 2
+WriteRow = 2
+
+Do While MainRow < 7
+    readline = Worksheets("Autothis").Range(ColA & MainRow)
+    Objectype = Left(readline, 5)
+'    Debug.Print readline
+
+    Select Case Objectype
+        Case Is = "objec"
+                WriteRow = WriteRow + 1
+                Worksheets("Autothis").Range(ColB & WriteRow) = readline
+ 
+        Case Is = " host"
+                Worksheets("Autothis").Range(ColC & WriteRow) = readline
+  
+        Case Is = " desc"
+                Worksheets("Autothis").Range(ColD & WriteRow) = readline
+
+    End Select
+           
+    
+    MainRow = MainRow + 1
+
+Loop
+
+End Sub
